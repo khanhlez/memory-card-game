@@ -4,17 +4,22 @@ export interface HeaderProps {
 }
 
 export interface GamePageProps {
-  setScore: (score: number) => void
-  setBestScore: (score: number) => void
+  setScore: React.Dispatch<React.SetStateAction<number>>
+  setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export interface CardProps {
   player: {
-    id: number
+    id: string
     name: string
     image: string
   }
   imageSource: string
-  setScore: (score: number) => void
-  setBestScore: (score: number) => void
+  handleSelectCard: () => void
+}
+
+export interface SampleData {
+  id: string
+  name: string
+  image: string
 }

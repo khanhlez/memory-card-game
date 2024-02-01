@@ -1,8 +1,26 @@
+import { useState } from 'react'
 import Card from '~/components/Card.tsx'
 import { data } from '~/sampleData.ts'
-import { GamePageProps } from '~/types.tsx'
+import { GamePageProps, SampleData } from '~/types.tsx'
 
-const GamePage = ({ setScore, setBestScore }: GamePageProps) => {
+const GamePage = ({ setScore, setIsGameOver }: GamePageProps) => {
+  const [selectedCards, setSelectedCards] = useState<SampleData[]>([])
+
+  function handleClick(player: SampleData) {
+    if (selectedCards.includes(player)) {
+      setIsGameOver(true)
+      setSelectedCards([])
+    } else {
+      setScore((score) => score + 1)
+      setSelectedCards((selectedCards) => [...selectedCards, player])
+      shuffle()
+    }
+  }
+
+  function shuffle() {
+    return data.sort(() => Math.random() - 0.5)
+  }
+
   return (
     <div className='flex flex-wrap justify-center items-center gap-8'>
       {data.map((player) => (
@@ -10,8 +28,7 @@ const GamePage = ({ setScore, setBestScore }: GamePageProps) => {
           key={player.id}
           player={player}
           imageSource={`/images/${player.image}.png`}
-          setScore={setScore}
-          setBestScore={setBestScore}
+          handleSelectCard={() => handleClick(player)}
         />
       ))}
     </div>

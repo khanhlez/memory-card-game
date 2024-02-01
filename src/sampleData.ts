@@ -1,61 +1,64 @@
-export const data = [
+import uniqid from 'uniqid'
+import { SampleData } from '~/types'
+
+export const data: SampleData[] = [
   {
-    id: 1,
+    id: uniqid(),
     image: 'mbappe',
     name: 'Mbappe'
   },
   {
-    id: 2,
+    id: uniqid(),
     image: 'benzema',
     name: 'Benzema'
   },
   {
-    id: 3,
+    id: uniqid(),
     image: 'bonmati',
     name: 'Bonmati'
   },
   {
-    id: 4,
+    id: uniqid(),
     image: 'courtois',
     name: 'Courtois'
   },
   {
-    id: 5,
+    id: uniqid(),
     image: 'haaland',
     name: 'Haaland'
   },
   {
-    id: 6,
+    id: uniqid(),
     image: 'hansen',
     name: 'Hansen'
   },
   {
-    id: 7,
+    id: uniqid(),
     image: 'kane',
     name: 'Kane'
   },
   {
-    id: 8,
+    id: uniqid(),
     image: 'kdb',
     name: 'Kevin de Bruyne'
   },
   {
-    id: 9,
+    id: uniqid(),
     image: 'kerr',
     name: 'Kerr'
   },
   {
-    id: 10,
+    id: uniqid(),
     image: 'lewandowski',
     name: 'Lewandowski'
   },
   {
-    id: 11,
+    id: uniqid(),
     image: 'messi',
     name: 'Messi'
   },
   {
-    id: 12,
+    id: uniqid(),
     image: 'putellas',
     name: 'Putellas'
   }
